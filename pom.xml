@@ -124,28 +124,28 @@
 				<artifactId>openapi-generator-maven-plugin</artifactId>
 				<version>7.15.0</version>
 				<executions>
-					<execution>
-						<id>generate-api</id>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/openapi-data.yaml</inputSpec>
-							<generatorName>spring</generatorName>
-							<output>${project.build.directory}/generated-sources/openapi</output>
-							<apiPackage>ru.zelinskaia.data.api</apiPackage>
-							<modelPackage>ru.zelinskaia.data.model</modelPackage>
-							<basePackage>ru.zelinskaia.data</basePackage>
-							<configOptions>
-								<interfaceOnly>true</interfaceOnly>
-								<useJakartaEe>true</useJakartaEe>
-								<dateLibrary>java8</dateLibrary>
-								<useTags>true</useTags>
-								<library>spring-boot</library>
-								<generateSpringApplication>false</generateSpringApplication>
-							</configOptions>
-						</configuration>
-					</execution>
+				<execution>
+					<id>generate-api</id>
+					<goals>
+						<goal>generate</goal>
+					</goals>
+					<configuration>
+						<inputSpec>${project.basedir}/src/main/resources/openapi-data.yaml</inputSpec>
+						<generatorName>spring</generatorName>
+						<output>${project.build.directory}/generated-sources/openapi</output>
+						<apiPackage>ru.petrov.data.api</apiPackage>
+						<modelPackage>ru.petrov.data.model</modelPackage>
+						<basePackage>ru.petrov.data</basePackage>
+						<configOptions>
+							<interfaceOnly>true</interfaceOnly>
+							<useJakartaEe>true</useJakartaEe>
+							<dateLibrary>java8</dateLibrary>
+							<useTags>true</useTags>
+							<library>spring-boot</library>
+							<generateSpringApplication>false</generateSpringApplication>
+						</configOptions>
+					</configuration>
+				</execution>
 
 				</executions>
 			</plugin>
@@ -155,18 +155,18 @@
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<version>3.3.0</version>
 				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>${project.build.directory}/generated-sources/openapi/src/main/java</source>
-							</sources>
-						</configuration>
-					</execution>
+				<execution>
+					<id>add-source</id>
+					<phase>generate-sources</phase>
+					<goals>
+						<goal>add-source</goal>
+					</goals>
+					<configuration>
+						<sources>
+							<source>${project.build.directory}/generated-sources/openapi/src/main/java</source>
+						</sources>
+					</configuration>
+				</execution>
 				</executions>
 			</plugin>
 		</plugins>

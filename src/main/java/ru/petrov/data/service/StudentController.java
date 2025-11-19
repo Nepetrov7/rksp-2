@@ -1,3 +1,10 @@
+package ru.petrov.data.service;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequiredArgsConstructor
 public class StudentController implements StudentDataApi {

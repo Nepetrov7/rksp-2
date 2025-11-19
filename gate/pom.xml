@@ -87,6 +87,24 @@
 				<version>7.15.0</version>
 				<executions>
 				<execution>
+					<id>generate-feign-client</id>
+					<goals>
+					<goal>generate</goal>
+					</goals>
+					<configuration>
+					<inputSpec>${project.basedir}/src/main/resources/openapi-data.yaml</inputSpec>
+					<generatorName>java</generatorName>
+					<output>${project.build.directory}/generated-sources/openapi-feign</output>
+					<apiPackage>ru.petrov.gate.client.api</apiPackage>
+					<modelPackage>ru.petrov.gate.client.model</modelPackage>
+					<configOptions>
+						<library>feign</library>
+						<interfaceOnly>true</interfaceOnly>
+						<useJakartaEe>true</useJakartaEe>
+					</configOptions>
+					</configuration>
+				</execution>
+				<execution>
 					<id>generate-api</id>
 					<goals>
 						<goal>generate</goal>

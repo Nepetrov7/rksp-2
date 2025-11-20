@@ -36,4 +36,19 @@ public class StudentGateController implements StudentGateApi {
 
     return ResponseEntity.status(201).body(gateResponse);
   }
+
+  /**
+   * Проксирует получение студента по ID из сервиса DATA-SERVICE.
+   */
+  @Override
+  public ResponseEntity<StudentGateResponse> getStudentById(Long id) {
+    StudentDataResponse dataResponse = studentsFeignClient.getStudentDataByIdFromData(id);
+
+    StudentGateResponse gateResponse = new StudentGateResponse();
+    gateResponse.setId(dataResponse.getId());
+    gateResponse.setFullName(dataResponse.getFullName());
+    gateResponse.setPassport(dataResponse.getPassport());
+
+    return ResponseEntity.ok(gateResponse);
+  }
 }

@@ -1,5 +1,16 @@
 package ru.petrov.gate;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
+import ru.petrov.data.api.StudentGateApi;
+import ru.petrov.data.model.StudentGateCreateRequest;
+import ru.petrov.data.model.StudentGateResponse;
+import ru.petrov.gate.client.api.StudentDataApi;
+import ru.petrov.gate.client.model.StudentDataCreateRequest;
+import ru.petrov.gate.client.model.StudentDataResponse;
+
 @RestController
 @RequiredArgsConstructor
 public class StudentGateController implements StudentGateApi {
